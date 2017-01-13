@@ -1,0 +1,29 @@
+<ion-view title="Buscar" id="page2">
+  <ion-content padding="true" class="has-header">
+    <form id="buscar-form1" class="list">
+      <label class="item item-select" id="buscar-select1" name="cmbInstrumentos">
+        <span class="input-label"></span>
+        <select>
+          <option>Guitarra</option>
+          <option>Baixo</option>
+          <option>Teclado</option>
+          <option>Bateria</option>
+        </select>
+      </label>
+      <ion-item class="range range-positive" id="buscar-range1">Nível
+        <input type="range" value="50" min="0" max="100" step="1">
+      </ion-item>
+    </form>
+    <form id="buscar-form2" class="list">
+      <ion-toggle toggle-class="toggle-positive" id="buscar-toggle1">Rock</ion-toggle>
+    </form>
+    <form id="buscar-form3" class="list">
+      <ion-toggle toggle-class="toggle-positive" id="buscar-toggle2">Jazz</ion-toggle>
+    </form>
+    <form id="buscar-form4" class="list">
+      <div id="buscar-button-bar1" class="button-bar"></div>
+      <ion-toggle toggle-class="toggle-positive" id="buscar-toggle3">Black Music</ion-toggle>
+    </form>
+    <a ui-sref="menu.resultado" id="buscar-button1" class="button button-positive  button-block">Buscar</a>
+  </ion-content>
+</ion-view>

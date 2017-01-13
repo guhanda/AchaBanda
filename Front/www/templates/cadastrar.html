@@ -1,0 +1,63 @@
+<ion-view title="Cadastrar" id="cadastrar" ng-controller="cadastrarCtrl as cad">
+    <ion-content padding="true" class="has-header">
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Nome completo</span>
+                <input type="text" placeholder="John" ng-model="cad.formData.Nome">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">E-mail</span>
+                <input type="text" placeholder="Suhr" ng-model="cad.formData.Email">
+            </label>
+            
+            <button class="button button-full button-calm" ng-click="cad.cadastrar()">
+                Avançar
+            </button>
+            
+            <button class="button button-full button-assertive">
+                Cancelar
+            </button>
+        </div>
+            
+            <!--<ul class="list">
+
+                <li class="item item-toggle">
+                    Voz<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
+                </li>
+                
+                <li class="item item-toggle">
+                    Guitarra<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
+                </li>
+                
+                <li class="item item-toggle">
+                    Baixo<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
+                </li>
+                
+                <li class="item item-toggle">
+                    Bateria<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
+                </li>
+                
+                <li class="item item-toggle">
+                    Teclado<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
+                </li>
+
+            </ul>
+            
+            <form id="buscar-form1" class="list">
+                <label class="item item-select" id="buscar-select1" name="cmbInstrumentos">
+                    <span class="input-label"></span>
+                    <select>
+                    <option>Guitarra</option>
+                    <option>Baixo</option>
+                    <option>Teclado</option>
+                    <option>Bateria</option>
+                    </select>
+                </label>
+                <ion-item class="range range-positive" id="buscar-range1">Nível
+                    <input type="range" value="50" min="0" max="100" step="1">
+                </ion-item>
+            </form>-->
+
+    </ion-content>
+</ion-view>

@@ -14,82 +14,40 @@
                 <option>BATERIA</option>
                 </select>
             </label>
-             <div class="item">
-    <span class="input-label">Meu nível</span>       
-      <ionic-ratings ratingsobj='ratingsObject' index='0' style="font-size: 40px;z-index:9999999"></ionic-ratings>
-    </div>
-            
-    
-    
- 
+            <div class="item">
+                <span class="input-label">Meu nível</span>       
+                <ionic-ratings ratingsobj='ratingsObject' index='0' style="font-size: 40px;z-index:9999999"></ionic-ratings>
+            </div>
+        </div>
   
-  
-</div>
-  
-            
-          
-            
-            <!--<div class="item range">
-                <div class="input-label">
-                    Meu nível
-                </div>
-                <i class="icon ion-volume-low"></i>
-                <input type="range" name="volume">
-                <i class="icon ion-volume-high"></i>
-            </div>-->
-            
-        
-        
         <button class="button button-full button-calm" ng-click="cad.cadastrar()">
-            Avançar
+            Incluir
         </button>
         
-        <button class="button button-full button-energized">
-            Pular
-        </button>
+        <div class="list">
+
+            <div class="item item-button-right">
+                Guitarra
+                <a class="button button-small button-icon icon-small ion-close"></a>
+            </div>
+            
+            <div class="item item-button-right">
+                Baixo
+                <a class="button button-small button-icon icon-small ion-close"></a>
+            </div>
+            
+            <div class="item item-button-right">
+                Teclado
+                <a class="button button-icon icon-small ion-close"></a>
+            </div>
+            
+            
+
+        </div>
         
-        <button class="button button-full button-assertive">
-            Cancelar
-        </button>
-            
-            <!--<ul class="list">
-
-                <li class="item item-toggle">
-                    Voz<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-                
-                <li class="item item-toggle">
-                    Guitarra<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-                
-                <li class="item item-toggle">
-                    Baixo<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-                
-                <li class="item item-toggle">
-                    Bateria<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-                
-                <li class="item item-toggle">
-                    Teclado<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-
-            </ul>
-            
-            <form id="buscar-form1" class="list">
-                <label class="item item-select" id="buscar-select1" name="cmbInstrumentos">
-                    <span class="input-label"></span>
-                    <select>
-                    <option>Guitarra</option>
-                    <option>Baixo</option>
-                    <option>Teclado</option>
-                    <option>Bateria</option>
-                    </select>
-                </label>
-                <ion-item class="range range-positive" id="buscar-range1">Nível
-                    <input type="range" value="50" min="0" max="100" step="1">
-                </ion-item>
-            </form>-->
-
+        <div class="bar bar-footer bar-calm">
+            <div class="title">Pronto!</div>
+        </div>
+          
     </ion-content>
 </ion-view>

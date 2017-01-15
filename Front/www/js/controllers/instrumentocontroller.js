@@ -1,10 +1,11 @@
 angular.module('app').controller('instrumentoCtrl', 
-    ['$scope','EntrarFactory','$ionicNavBarDelegate','$location',
-    function ($scope, EntrarFactory, $ionicNavBarDelegate, $location) {
+    ['$scope','InstrumentoFactory','$ionicNavBarDelegate','$location',
+    function ($scope, InstrumentoFactory, $ionicNavBarDelegate, $location) {
 
         var cadastrar = this;
         $ionicNavBarDelegate.showBackButton(false);
-        cadastrar.formData = EntrarFactory.bindLoginFormData;
+        cadastrar.formData = InstrumentoFactory.bindLoginFormData;
+        cadastrar.formData.listInstrumentos = [];
         
         $scope.ratingsObject = {
             iconOn: 'ion-ios-star',    //Optional
@@ -20,15 +21,34 @@ angular.module('app').controller('instrumentoCtrl',
         };
         
         $scope.ratingsCallback = function(rating, index) {
-            console.log('Selected rating is : ', rating, ' and the index is : ', index);
+            cadastrar.formData.rating = rating;
         };
         
+        cadastrar.addInstrumento = function(){
+            
+            cadastrar.formData.listInstrumentos.push({
+                id: cadastrar.formData.listInstrumentos.length,
+                nome: cadastrar.formData.instrumento,
+                rating: cadastrar.formData.rating
+            });
+
+            console.log(cadastrar.formData.listInstrumentos);
+        };
+
+        cadastrar.removeInstrumento = function(item){
+           
+            for(var i in cadastrar.formData.listInstrumentos){
+                if(cadastrar.formData.listInstrumentos[i].id === item.id)
+                {
+                   cadastrar.formData.listInstrumentos.splice(i, 1); 
+                   console.log(i);
+                }
+            }
+        };
+
         cadastrar.cadastrar = function(){
             
-            debugger;
             $location.path('/menu.home');
-            
-            
         }
     }
 ]);

@@ -1,18 +1,17 @@
-<ion-view title="Quais instrumentos você toca?" id="instrumentos" ng-controller="instrumentoCtrl as inst" ng-init="inst.pageLoad()">
+<ion-view title="Cadastrar estilos" id="instrumentos" ng-controller="instrumentoCtrl as inst">
     <ion-content padding="true" class="has-header">
-        
-        <h6>Você pode escolher até 3 instrumentos</h6>
-        
+
         <div class="list">
             
             <label class="item item-input item-select">
                 <div class="input-label">
-                    Instrumento
+                    Instrumentos
                 </div>
                 <select ng-model="inst.formData.instrumento">
-                    <option ng-repeat="item in inst.formData.listInstrumentosDisponiveis | filter: inst.filterAlreadyAdded" ng-value="item.id">
-                        {{item.nome}}
-                    </option>
+                <option>GUITARRA</option>
+                <option selected>BAIXO</option>
+                <option>TECLADO</option>
+                <option>BATERIA</option>
                 </select>
             </label>
             <div class="item">

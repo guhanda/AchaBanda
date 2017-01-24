@@ -4,16 +4,12 @@
         <div class="list">
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Nome completo</span>
-                <input type="text" placeholder="John" ng-model="cad.formData.Nome">
+                <input type="text" placeholder="John" ng-model="cad.formData.Nome" >
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">E-mail</span>
-                <input type="text" placeholder="Suhr" ng-model="cad.formData.Email">
+                <input type="text" placeholder="Suhr" ng-model="cad.formData.Email" readonly>
             </label>
-            
-            <button class="button button-full button-calm" ng-click="cad.cadastrar()">
-                Avançar
-            </button>
             
             <button class="button button-full button-assertive">
                 Cancelar
@@ -58,6 +54,10 @@
                     <input type="range" value="50" min="0" max="100" step="1">
                 </ion-item>
             </form>-->
+            
+        <div class="bar bar-footer bar-calm" ng-click="cad.cadastrar()">
+            <div class="title">Avançar</div>
+        </div>
 
     </ion-content>
 </ion-view>

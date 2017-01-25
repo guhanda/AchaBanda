@@ -1,63 +1,94 @@
-<ion-view title="Cadastrar" id="cadastrar" ng-controller="cadastrarCtrl as cad">
+
+<ion-view title="{{cad.titulo}}" id="cadastrar" ng-controller="cadastrarCtrl as cad">
+    
     <ion-content padding="true" class="has-header">
 
-        <div class="list">
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Nome completo</span>
-                <input type="text" placeholder="John" ng-model="cad.formData.Nome" >
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">E-mail</span>
-                <input type="text" placeholder="Suhr" ng-model="cad.formData.Email" readonly>
-            </label>
+        <div ng-show="cad.step == 0">
             
-            <button class="button button-full button-assertive">
-                Cancelar
-            </button>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome completo</span>
+                    <input type="text" placeholder="John" ng-model="cad.formData.Nome" >
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">E-mail</span>
+                    <input type="text" placeholder="Suhr" ng-model="cad.formData.Email" readonly>
+                </label>
+                
+                <button class="button button-full button-assertive">
+                    Cancelar
+                </button>
+            </div>
+                
+            <div class="bar bar-footer bar-calm" ng-click="cad.irInstrumentos()">
+                <div class="title">Avançar</div>
+            </div>
+            
         </div>
+        
+        <div ng-show="cad.step == 1">
             
-            <!--<ul class="list">
-
-                <li class="item item-toggle">
-                    Voz<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
+            <h6>Você pode escolher até 3 instrumentos</h6>
+        
+            <div class="list">
                 
-                <li class="item item-toggle">
-                    Guitarra<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-                
-                <li class="item item-toggle">
-                    Baixo<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-                
-                <li class="item item-toggle">
-                    Bateria<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-                
-                <li class="item item-toggle">
-                    Teclado<label class="toggle toggle-positive"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>
-                </li>
-
-            </ul>
-            
-            <form id="buscar-form1" class="list">
-                <label class="item item-select" id="buscar-select1" name="cmbInstrumentos">
-                    <span class="input-label"></span>
-                    <select>
-                    <option>Guitarra</option>
-                    <option>Baixo</option>
-                    <option>Teclado</option>
-                    <option>Bateria</option>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Instrumento
+                    </div>
+                    <select ng-model="cad.formData.instrumento">
+                        <option ng-repeat="item in cad.formData.listInstrumentosDisponiveis | filter: cad.filterAlreadyAdded" ng-value="item.id">
+                            {{item.nome}}
+                        </option>
                     </select>
                 </label>
-                <ion-item class="range range-positive" id="buscar-range1">Nível
-                    <input type="range" value="50" min="0" max="100" step="1">
-                </ion-item>
-            </form>-->
-            
-        <div class="bar bar-footer bar-calm" ng-click="cad.cadastrar()">
-            <div class="title">Avançar</div>
-        </div>
+                <div class="item">
+                    <span class="input-label">Meu nível</span>       
+                    <ionic-ratings ratingsobj='ratingsObject' index='0' style="font-size: 40px;z-index:9999999"></ionic-ratings>
+                </div>
+                <div class="item" style="text-align:center">
+                    <button class="button button-outline button-calm" ng-click="cad.addInstrumento()">
+                        Incluir
+                    </button>
+                </div>
+            </div>
+                
+            <div class="list" >
 
+                <div class="item item-button-right" ng-repeat="item in cad.formData.listInstrumentos">
+                    {{item.nome}}
+                    <a class="button button-small button-icon icon-small ion-close" ng-click="cad.removeInstrumento(item)"></a>
+                </div>
+                
+            </div>
+            
+            <div class="bar bar-footer bar-calm">
+                <div class="title" ng-click="cad.irEstilos()">Avançar</div>
+            </div>
+            
+        </div>
+        
+        <div ng-show="cad.step == 2">
+            
+            <h6>Você pode escolher até 5 estilos</h6>
+            
+            <ul class="list">
+
+                <li class="item item-toggle">Rock<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
+                <li class="item item-toggle">Samba<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
+                <li class="item item-toggle">Pop<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
+                <li class="item item-toggle">Metal<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
+                                                                                
+                <li class="item">
+                    <button class="button button-clear button-calm">
+                        Ver mais...
+                    </button>
+                </li>
+            </ul>
+            
+             <div class="bar bar-calm">
+                <div class="title">Pronto!</div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

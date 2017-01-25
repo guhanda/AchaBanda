@@ -28,6 +28,8 @@
         entrarFormData.Email = "";
         entrarFormData.Password = "";
         entrarFormData.Nome= "";
+        entrarFormData.instrumento = "";
+        entrarFormData.rating = 2; //nivel inicial
       }
     }
   ]);

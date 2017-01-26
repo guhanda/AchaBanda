@@ -214,6 +214,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Estilo\Controllers\EstiloController.cs" />
+    <Compile Include="Areas\Estilo\EstiloAreaRegistration.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -242,6 +244,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\Instrumento\Controllers\InstrumentoController.cs" />
+    <Compile Include="Areas\Instrumento\InstrumentoAreaRegistration.cs" />
     <Compile Include="Areas\Usuario\Controllers\UsuarioController.cs" />
     <Compile Include="Areas\Usuario\UsuarioAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -301,6 +305,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Usuario\Views\web.config" />
+    <Content Include="Areas\Instrumento\Views\web.config" />
+    <Content Include="Areas\Estilo\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -330,6 +336,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Estilo\Models\" />
+    <Folder Include="Areas\Estilo\Views\Shared\" />
+    <Folder Include="Areas\Instrumento\Models\" />
+    <Folder Include="Areas\Instrumento\Views\Shared\" />
     <Folder Include="Areas\Usuario\Models\" />
     <Folder Include="Areas\Usuario\Views\Shared\" />
   </ItemGroup>

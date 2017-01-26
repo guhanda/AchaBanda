@@ -12,5 +12,7 @@ namespace AchaBandaApi.Core.Dominio
         [Key]
         public int IdEstilo { get; set; }
         public string NmEstilo { get; set; }
+        public int IndAvaliacao { get; set; }
+        public bool FlAtivo { get; set; }
     }
 }

@@ -36,5 +36,12 @@ namespace AchaBandaApi.Core.Infraestrutura
 
             return retorno;
         }
+
+        public IEnumerable<T> SelecionarTodos()
+        {
+            var retorno = connection.GetList<T>();
+
+            return retorno;
+        }
     }
 }

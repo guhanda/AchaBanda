@@ -1,4 +1,5 @@
 ﻿using AchaBandaApi.Core.Aplicacao;
+using AchaBandaApi.Core.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,19 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         }
 
         // PUT: api/Usuario/5
-        public void Put(int id, [FromBody]string value)
+        public long Put([FromBody]UsuarioModel usuario)
         {
+            long retorno = 0;
+
+            var facade = new UsuarioFacade();
+            var inserir = facade.Inserir(usuario);
+            if (inserir != null)
+            {
+                retorno = inserir.idUsuario;
+            }
+
+
+            return retorno;
         }
 
         // DELETE: api/Usuario/5

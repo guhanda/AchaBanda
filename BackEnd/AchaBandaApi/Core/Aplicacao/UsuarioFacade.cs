@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace AchaBandaApi.Core.Aplicacao
 {
-    public class UsuarioFacade : Database, IFacade<UsuarioModel>
+    public class UsuarioFacade : FacadeCRUD<UsuarioModel>
     {
         public UsuarioModel Atualizar(UsuarioModel item)
         {
@@ -25,12 +25,19 @@ namespace AchaBandaApi.Core.Aplicacao
 
         public UsuarioModel Inserir(UsuarioModel item)
         {
-            var retorno = connection.Insert<UsuarioModel>(item);
+            UsuarioModel retorno;
+
+            retorno = connection.GetList<UsuarioModel>("Where email = '"+item.Email+"'").FirstOrDefault();
+            
+            if (retorno == null)
+            {
+                retorno = connection.Insert<UsuarioModel>(item);
+            }
 
             return retorno;
         }
 
-        public UsuarioModel Selecionar(int id)
+        public UsuarioModel Selecionar(long id)
         {
             var retorno = connection.Get<UsuarioModel>(id);
 

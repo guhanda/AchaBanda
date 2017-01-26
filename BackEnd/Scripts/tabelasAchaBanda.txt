@@ -1,0 +1,108 @@
+--DataBase
+--create database achaBanda;
+
+--Use
+use achaBanda;
+
+--Tabela de Usuario
+
+
+--Tabela de Usuario
+CREATE TABLE usuario (
+idusuario bigint NOT NULL identity(1,1),
+nome varchar(255)  NOT NULL,
+email varchar(255) NOT NULL,
+senha varchar(30)  NOT NULL,
+celular varchar(20),	
+datacadastro datetime,
+token varchar(255),
+PRIMARY KEY (idusuario)
+);
+
+CREATE TABLE usuarioSessao(
+idUsuarioSessao bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+tokenInterno varchar(255) NOT NULL,
+dataInclusao datetime,
+PRIMARY KEY (idUsuarioSessao),
+constraint FKusuarioSessaoUsuario foreign key (idUsuario) references usuario(idUsuario)
+);
+
+CREATE TABLE historicoBusca(
+idHistoricoBusca bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+idInstrumento bigint NOT NULL,
+PRIMARY KEY (idHistoricoBusca),
+constraint FKhistoricoBuscaUsuario foreign key (idUsuario) references usuario(idUsuario),
+constraint FKhistoricoBuscaIntrumento foreign key (idIntrumento) references instrumento(idIntrumento)
+);
+
+CREATE TABLE usuarioLocalizacao (
+idUsuarioLocalizacao bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+longitude bigint,
+latitude bigint,
+dataUltimaAlteração datetime,
+PRIMARY KEY (idUsuarioLocalizacao),
+constraint FKusuarioLocalizacao foreign key (idUsuario) references usuario(idUsuario)
+);
+
+CREATE TABLE usuarioMidia(
+idUsuarioMidia bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+DataCriacao datetime,
+tipoMidia int not null,
+midia varchar(255),
+PRIMARY KEY (idUsuarioMidia)
+);
+
+CREATE TABLE estilo (
+idEstilo bigint NOT NULL identity(1,1),
+nmEstilo varchar(255) not null,
+indAvaliacao int not null default 0,
+flAtivo bit default 1,
+PRIMARY KEY (idEstilo)
+);
+
+CREATE TABLE usuarioEstilo (
+idUsuarioEstilo bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+IdEstilo bigint NOT NULL,
+PRIMARY KEY (idUsuarioEstilo),
+constraint FKusuarioEstilo_usuario foreign key (idUsuario) references usuario(idUsuario),
+constraint FKusuarioEstilo_estilo foreign key (IdEstilo) references estilo(IdEstilo)
+);
+
+CREATE TABLE instrumento (
+idInstrumento bigint NOT NULL identity(1,1),
+nmInstrumento varchar(255) NOT NULL,
+idTipoInstrumento bigint not null default 0,
+indAvaliacao int not null default 0,
+flAtivo bit default 1,
+PRIMARY KEY (idInstrumento)
+);
+
+CREATE TABLE usuarioInstrumento (
+idUsuarioInstrumento bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+idInstrumento bigint NOT NULL,
+PRIMARY KEY (idUsuarioInstrumento),
+constraint FKusuarioInstrumento_usuario foreign key (idUsuario) references usuario(idUsuario),
+constraint FKusuarioInstrumento_instrumento foreign key (idInstrumento) references instrumento(idInstrumento)
+);
+
+CREATE TABLE encontrados (
+idEncontrados bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+idUsuarioEncontrado bigint NOT NULL,
+dataCriacao datetime NOT NULL,
+PRIMARY KEY (idEncontrados),
+constraint FKencontrados_usuario foreign key (idUsuario) references usuario(idUsuario),
+constraint FKencontrados_usuarioEncontrado foreign key (idUsuarioEncontrado) references usuario(idUsuario)
+);
+
+CREATE TABLE tipoInstrumento(
+idTipoInstrumento bigint NOT NULL,
+nmTipoInstrumento varchar(255) not null
+);
+

@@ -11,7 +11,7 @@ namespace AchaBandaApi.Core.Aplicacao
     {
         public IEnumerable<EstiloModel> SelecionarTodos()
         {
-            var retorno = connection.GetList<EstiloModel>("order by indavaliacao desc");
+            var retorno = connection.GetList<EstiloModel>("order by indavaliacao desc, nmestilo asc");
 
             return retorno;
         }

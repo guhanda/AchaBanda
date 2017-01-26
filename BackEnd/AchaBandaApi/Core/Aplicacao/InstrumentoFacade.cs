@@ -9,7 +9,7 @@ namespace AchaBandaApi.Core.Aplicacao
     {
         public IEnumerable<InstrumentoModel> SelecionarTodos()
         {
-            var retorno = connection.GetList<InstrumentoModel>("order by indavaliacao desc");
+            var retorno = connection.GetList<InstrumentoModel>("order by indavaliacao desc, nminstrumento asc");
 
             return retorno;
         }

@@ -15,9 +15,12 @@ namespace AchaBandaApi.Areas.Instrumento.Controllers
         // GET: api/Instrumento
         public IEnumerable<InstrumentoModel> Get()
         {
-            var facadeIntrumento = new InstrumentoFacade();
+            IEnumerable<InstrumentoModel> instrumento;
 
-            var instrumento = facadeIntrumento.SelecionarTodos();
+            using (var facadeIntrumento = new InstrumentoFacade())
+            {
+                instrumento = facadeIntrumento.SelecionarTodos();
+            }
 
             return instrumento;
         }
@@ -25,10 +28,13 @@ namespace AchaBandaApi.Areas.Instrumento.Controllers
         // GET: api/Instrumento/5
         public InstrumentoModel Get(int id)
         {
-            var facadeIntrumento = new InstrumentoFacade();
+            InstrumentoModel instrumento;
 
-            var instrumento = facadeIntrumento.Selecionar(1);
-                
+            using (var facadeIntrumento = new InstrumentoFacade())
+            {
+                instrumento = facadeIntrumento.Selecionar(1);
+            }
+              
             return instrumento;
         }
 

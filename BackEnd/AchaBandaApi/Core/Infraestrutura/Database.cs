@@ -10,7 +10,7 @@ using AchaBandaApi.Core.Dominio;
 
 namespace AchaBandaApi.Core.Infraestrutura
 {
-    public class Database
+    public class Database : IDisposable
     {
         public IDbConnection connection { get; set; }
 
@@ -33,6 +33,11 @@ namespace AchaBandaApi.Core.Infraestrutura
             conn.Open();
 
             return conn;
+        }
+
+        public void Dispose()
+        {
+            connection.Close();
         }
     }
 }

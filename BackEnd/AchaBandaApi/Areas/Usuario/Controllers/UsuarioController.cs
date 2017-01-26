@@ -18,17 +18,16 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         }
 
         // GET: api/Usuario/5
-        public string Get(int id)
+        public UsuarioModel Get(int id)
         {
-            var facade = new UsuarioFacade();
+            UsuarioModel usuario;
 
-            var facadeEstilo = new InstrumentoFacade();
+            using (var facade = new UsuarioFacade())
+            {
+                usuario = facade.Selecionar(id);
+            }
 
-            var estilo = facadeEstilo.Selecionar(1);
-
-            var aaaa = facade.Selecionar(1);
-
-            return "value";
+            return usuario;
         }
 
         // POST: api/Usuario
@@ -47,7 +46,6 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
             {
                 retorno = inserir.idUsuario;
             }
-
 
             return retorno;
         }

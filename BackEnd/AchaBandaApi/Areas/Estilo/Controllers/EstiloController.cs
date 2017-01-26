@@ -14,17 +14,27 @@ namespace AchaBandaApi.Areas.Estilo.Controllers
         // GET: api/Estilo
         public IEnumerable<EstiloModel> Get()
         {
-            var facadeEstilo = new EstiloFacade();
+            IEnumerable<EstiloModel> estilo;
 
-            var estilo = facadeEstilo.SelecionarTodos();
+            using (var facadeEstilo = new EstiloFacade())
+            {
+                 estilo = facadeEstilo.SelecionarTodos();
+            }
 
             return estilo;
         }
 
         // GET: api/Estilo/5
-        public string Get(int id)
+        public EstiloModel Get(int id)
         {
-            return "value";
+            EstiloModel estilo;
+
+            using (var facadeEstilo = new EstiloFacade())
+            {
+                estilo = facadeEstilo.Selecionar(id);
+            }
+
+            return estilo;
         }
 
         // POST: api/Estilo

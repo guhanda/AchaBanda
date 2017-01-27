@@ -7,9 +7,7 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
   
-
   .state('menu.home', {
     url: '/menu.home',
     views: {
@@ -19,6 +17,26 @@ angular.module('app.routes', [])
       }
     }
   })
+
+  .state('menu.perfil', {
+    url: '/menu.perfil',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/perfil.html',
+        //controller: 'homeCtrl'
+      }
+    }
+  })
+
+  .state('menu.instrumentos', {
+    url: '/menu.instrumentos',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/instrumento.html',
+        //controller: 'homeCtrl'
+      }
+    }
+  })  
 
   .state('menu.buscar', {
     url: '/page2',
@@ -66,13 +84,7 @@ angular.module('app.routes', [])
     url: '/cadastrar',
     templateUrl: 'templates/cadastrar.html',
   })
-
- .state('instrumento', {
-    url: '/instrumento',
-    templateUrl: 'templates/addInstrumentos.html',
-  })
-//$urlRouterProvider.otherwise('/page6')
-
-  
+ 
+  $urlRouterProvider.otherwise('/page6')
 
 });

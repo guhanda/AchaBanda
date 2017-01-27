@@ -4,6 +4,7 @@ angular.module('app').controller('cadastrarCtrl',
 
         var cadastrar = this;
         
+        debugger;
         cadastrar.step = 0;
         
         cadastrar.titulo = "Cadastrar";
@@ -63,7 +64,7 @@ angular.module('app').controller('cadastrarCtrl',
                 rating: cadastrar.formData.rating
             });
 
-            cadastrar.zerarRatings();
+            //cadastrar.zerarRatings();
         };
 
         cadastrar.removeInstrumento = function(item){
@@ -87,16 +88,45 @@ angular.module('app').controller('cadastrarCtrl',
         };
         
         cadastrar.irInstrumentos = function(){
-            
+        
+            var alertPopup = $ionicPopup.alert({
+                title: 'Selecionar',
+                template: 'Escolha até 3 instrumentos que você toca.',
+                buttons: [
+                    {
+                        text: '<b>Beleza</b>',
+                        type: 'button-energized',
+                    }
+                ]
+            });
             cadastrar.titulo = "Quais instrumentos você toca?";
             cadastrar.step = 1;
             
         };
         
         cadastrar.irEstilos = function(){
+            
+            var alertPopup = $ionicPopup.alert({
+                title: 'Selecionar',
+                template: 'Escolha até 5 estilos que você curte.',
+                buttons: [
+                    {
+                        text: '<b>Beleza</b>',
+                        type: 'button-energized',
+                    }
+                ]
+            });
             cadastrar.titulo = "Quais estilos você curte?";
             cadastrar.step = 2;
             
+        };
+        
+        cadastrar.concluir = function(){
+            
+            cadastrar.step = 0;
+            cadastrar.titulo = "Cadastrar";
+            
+            $location.path('/side-menu21/menu.home');
         };
         
     }

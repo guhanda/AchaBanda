@@ -188,3 +188,8 @@ D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\System.Web.Http.Owin.
 D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\obj\Debug\AchaBandaApi.csprojResolveAssemblyReference.cache
 D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\obj\Debug\AchaBandaApi.dll
 D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\obj\Debug\AchaBandaApi.pdb
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\Geolocation.dll
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\Geolocation.pdb
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\MiniProfiler.Integrations.dll
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\MiniProfiler.Integrations.pdb
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\MiniProfiler.Integrations.xml

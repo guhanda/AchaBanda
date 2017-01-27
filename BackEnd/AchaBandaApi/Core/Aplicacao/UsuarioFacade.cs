@@ -31,7 +31,8 @@ namespace AchaBandaApi.Core.Aplicacao
             
             if (retorno == null)
             {
-                retorno = connection.Insert<UsuarioModel>(item);
+                var identity = connection.Insert(item);
+                retorno = connection.Get<UsuarioModel>(identity);
             }
 
             return retorno;

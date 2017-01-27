@@ -1,0 +1,136 @@
+ExecutedCommands: CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -47,1754914927536
+Name: maxLatitude, Value: -46,4550625072464
+Name: minLongitude, Value: -24,0363749518032
+Name: maxLongitude, Value: -22,9836590481968
+
+----
+CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -46,9953842463768
+Name: maxLatitude, Value: -46,6351697536232
+Name: minLongitude, Value: -23,7731959759016
+Name: maxLongitude, Value: -23,2468380240984
+
+----
+CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -46,9503574347826
+Name: maxLatitude, Value: -46,6801965652174
+Name: minLongitude, Value: -23,7074012319262
+Name: maxLongitude, Value: -23,3126327680738
+
+----
+CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -46,9053306231884
+Name: maxLatitude, Value: -46,7252233768116
+Name: minLongitude, Value: -23,6416064879508
+Name: maxLongitude, Value: -23,3784275120492
+
+----
+CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -46,9143359855073
+Name: maxLatitude, Value: -46,7162180144928
+Name: minLongitude, Value: -23,6547654367459
+Name: maxLongitude, Value: -23,3652685632541
+
+----
+CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -46,9233413478261
+Name: maxLatitude, Value: -46,7072126521739
+Name: minLongitude, Value: -23,667924385541
+Name: maxLongitude, Value: -23,352109614459
+
+----
+CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -46,9143359855073
+Name: maxLatitude, Value: -46,7162180144928
+Name: minLongitude, Value: -23,6547654367459
+Name: maxLongitude, Value: -23,3652685632541
+
+----
+CommandType: Text, CommandText: Select [IdUsuario],[Longitude],[Latitude],[DataUltimaAlteracao] from [usuarioLocalizacao] where idusuario = @id order by dataUltimaAlteracao desc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 1
+
+----
+CommandType: Text, CommandText: select b.* from(select Max(idUsuarioLocalizacao) as id from usuarioLocalizacao group by idUsuario) as a inner join usuarioLocalizacao b on a.id = b.idUsuarioLocalizacao
+                where idusuario <> @idusuario and latitude >= @minLatitude and latitude <= @maxLatitude and longitude >= @minLongitude and longitude <= @maxLongitude
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idusuario, Value: 1
+Name: minLatitude, Value: -46,9233413478261
+Name: maxLatitude, Value: -46,7072126521739
+Name: minLongitude, Value: -23,667924385541
+Name: maxLongitude, Value: -23,352109614459
+--------------
+FailedCommands: 

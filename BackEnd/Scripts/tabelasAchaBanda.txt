@@ -1,4 +1,4 @@
---DataBase
+﻿--DataBase
 --create database achaBanda;
 
 --Use
@@ -40,9 +40,9 @@ constraint FKhistoricoBuscaIntrumento foreign key (idIntrumento) references inst
 CREATE TABLE usuarioLocalizacao (
 idUsuarioLocalizacao bigint NOT NULL identity(1,1),
 idUsuario bigint NOT NULL,
-longitude bigint,
-latitude bigint,
-dataUltimaAlteração datetime,
+longitude float(53),
+latitude float(53),
+dataUltimaAlteracao datetime,
 PRIMARY KEY (idUsuarioLocalizacao),
 constraint FKusuarioLocalizacao foreign key (idUsuario) references usuario(idUsuario)
 );

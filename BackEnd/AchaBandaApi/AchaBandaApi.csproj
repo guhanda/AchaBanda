@@ -52,6 +52,10 @@
       <HintPath>..\packages\Dapper.SimpleCRUD.1.13.0\lib\net45\Dapper.SimpleCRUD.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Geolocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geolocation.1.1.1\lib\Geolocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +89,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3" />
+    <Reference Include="MiniProfiler.Integrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0e789b781a1e1dbb, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Integrations.2.2.0\lib\MiniProfiler.Integrations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -246,6 +255,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\Instrumento\Controllers\InstrumentoController.cs" />
     <Compile Include="Areas\Instrumento\InstrumentoAreaRegistration.cs" />
+    <Compile Include="Areas\UsuarioLocalizacao\Controllers\UsuarioLocalizacaoController.cs" />
+    <Compile Include="Areas\UsuarioLocalizacao\UsuarioLocalizacaoAreaRegistration.cs" />
     <Compile Include="Areas\Usuario\Controllers\UsuarioController.cs" />
     <Compile Include="Areas\Usuario\UsuarioAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -254,9 +265,11 @@
     <Compile Include="Core\Aplicacao\EstiloFacade.cs" />
     <Compile Include="Core\Aplicacao\InstrumentoFacade.cs" />
     <Compile Include="Core\Aplicacao\Interface\IFacade.cs" />
+    <Compile Include="Core\Aplicacao\UsuarioLocalizacaoFacade.cs" />
     <Compile Include="Core\Aplicacao\UsuarioFacade.cs" />
     <Compile Include="Core\Dominio\EstiloModel.cs" />
     <Compile Include="Core\Dominio\InstrumentoModel.cs" />
+    <Compile Include="Core\Dominio\UsuarioLocalizacaoModel.cs" />
     <Compile Include="Core\Dominio\UsuarioModel.cs" />
     <Compile Include="Core\Infraestrutura\Database.cs" />
     <Compile Include="Core\Infraestrutura\FacadeCRUD.cs" />
@@ -307,6 +320,7 @@
     <Content Include="Areas\Usuario\Views\web.config" />
     <Content Include="Areas\Instrumento\Views\web.config" />
     <Content Include="Areas\Estilo\Views\web.config" />
+    <Content Include="Areas\UsuarioLocalizacao\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -340,6 +354,8 @@
     <Folder Include="Areas\Estilo\Views\Shared\" />
     <Folder Include="Areas\Instrumento\Models\" />
     <Folder Include="Areas\Instrumento\Views\Shared\" />
+    <Folder Include="Areas\UsuarioLocalizacao\Models\" />
+    <Folder Include="Areas\UsuarioLocalizacao\Views\Shared\" />
     <Folder Include="Areas\Usuario\Models\" />
     <Folder Include="Areas\Usuario\Views\Shared\" />
   </ItemGroup>

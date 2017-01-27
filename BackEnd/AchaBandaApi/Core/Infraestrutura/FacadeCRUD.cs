@@ -1,6 +1,8 @@
 ﻿using Dapper;
+using MiniProfiler.Integrations;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -25,9 +27,20 @@ namespace AchaBandaApi.Core.Infraestrutura
 
         public T Inserir(T item)
         {
-            var retorno = connection.Insert<T>(item);
+            var retorno = connection.Insert(item);
 
-            return retorno;
+            T model;
+
+            if(retorno > 0 )
+            {
+                model = connection.Get<T>(retorno);
+            }
+            else
+            {
+                model = default(T);
+            }
+
+            return model;
         }
 
         public T Selecionar(int id)

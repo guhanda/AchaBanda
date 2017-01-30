@@ -1,4 +1,5 @@
 ﻿using AchaBandaApi.Core.Aplicacao;
+using AchaBandaApi.Core.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,17 +18,16 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         }
 
         // GET: api/Usuario/5
-        public string Get(int id)
+        public UsuarioModel Get(int id)
         {
-            var facade = new UsuarioFacade();
+            UsuarioModel usuario;
 
-            var facadeEstilo = new InstrumentoFacade();
+            using (var facade = new UsuarioFacade())
+            {
+                usuario = facade.Selecionar(id);
+            }
 
-            var estilo = facadeEstilo.Selecionar(1);
-
-            var aaaa = facade.Selecionar(1);
-
-            return "value";
+            return usuario;
         }
 
         // POST: api/Usuario
@@ -36,8 +36,18 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         }
 
         // PUT: api/Usuario/5
-        public void Put(int id, [FromBody]string value)
+        public long Put([FromBody]UsuarioModel usuario)
         {
+            long retorno = 0;
+
+            var facade = new UsuarioFacade();
+            var inserir = facade.Inserir(usuario);
+            if (inserir != null)
+            {
+                retorno = inserir.idUsuario;
+            }
+
+            return retorno;
         }
 
         // DELETE: api/Usuario/5

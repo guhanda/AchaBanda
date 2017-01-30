@@ -1,14 +1,19 @@
 ﻿using AchaBandaApi.Core.Dominio;
 using AchaBandaApi.Core.Infraestrutura;
-using System;
+using Dapper;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
+
 
 namespace AchaBandaApi.Core.Aplicacao
 {
     public class EstiloFacade : FacadeCRUD<EstiloModel>
     {
+        public IEnumerable<EstiloModel> SelecionarTodos()
+        {
+            var retorno = connection.GetList<EstiloModel>("where flativo = 1 order by indavaliacao desc, nmestilo asc");
 
+            return retorno;
+        }
     }
 }

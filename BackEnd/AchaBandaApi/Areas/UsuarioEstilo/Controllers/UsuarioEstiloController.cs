@@ -7,10 +7,10 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace AchaBandaApi.Areas.UsuarioInstrumento.Controllers
+namespace AchaBandaApi.Areas.UsuarioEstilo.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class UsuarioInstrumentoController : ApiController
+    public class UsuarioEstiloController : ApiController
     {
         // GET: api/Usuario
         public IEnumerable<string> Get()
@@ -19,11 +19,11 @@ namespace AchaBandaApi.Areas.UsuarioInstrumento.Controllers
         }
 
         // GET: api/Usuario/5
-        public UsuarioInstrumentoModel Get(int id)
+        public UsuarioEstiloModel Get(int id)
         {
-            UsuarioInstrumentoModel usuario;
+            UsuarioEstiloModel usuario;
 
-            using (var facade = new UsuarioInstrumentoFacade())
+            using (var facade = new UsuarioEstiloFacade())
             {
                 usuario = facade.Selecionar(id);
             }
@@ -37,12 +37,12 @@ namespace AchaBandaApi.Areas.UsuarioInstrumento.Controllers
         }
 
         // PUT: api/Usuario/5
-        public long Put([FromBody]UsuarioInstrumentoModel usuarioInstrumento)
+        public long Put([FromBody]UsuarioEstiloModel usuarioEstilo)
         {
             long retorno = 0;
 
-            var facade = new UsuarioInstrumentoFacade();
-            var inserir = facade.Inserir(usuarioInstrumento);
+            var facade = new UsuarioEstiloFacade();
+            var inserir = facade.Inserir(usuarioEstilo);
             if (inserir != null)
             {
                 retorno = inserir.idUsuario;

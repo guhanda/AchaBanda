@@ -213,6 +213,29 @@ angular.module('app').controller('cadastrarCtrl',
         
         cadastrar.concluir = function(){
             debugger;
+
+            angular.forEach(cadastrar.formData.listInstrumentos, function(value, key){
+
+                var obj = {
+                    "idUsuario": 2,
+                    "idInstrumento": value.IdInstrumento
+                };
+
+                cadastrar.promise = CadastrarService.cadastrarUsuarioInstrumento(obj);        
+
+            });
+
+            angular.forEach(cadastrar.formData.listEstilos, function(value, key){
+
+                var obj = {
+                    "idUsuario": 2,
+                    "idEstilo": value.IdEstilo
+                };
+
+                cadastrar.promise = CadastrarService.cadastrarUsuarioEstilo(obj);        
+
+            });
+            
             cadastrar.step = 0;
             cadastrar.titulo = "Cadastrar";
             

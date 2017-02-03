@@ -8,7 +8,9 @@
         urls:{
             loginAPI: baseURLApi + "/api/Usuario/:id",
             buscarInstrumento: baseURLApi + '/api/Instrumento/:id',
-            buscarEstilo: baseURLApi + '/api/Estilo/:id'
+            buscarEstilo: baseURLApi + '/api/Estilo/:id',
+            cadastrarUsuarioInstrumento : baseURLApi + '/api/UsuarioInstrumento',
+            cadastrarUsuarioEstilo : baseURLApi + '/api/UsuarioEstilo',
         }
     };
 

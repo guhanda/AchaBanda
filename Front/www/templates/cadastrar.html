@@ -71,24 +71,41 @@
         <div ng-show="cad.step == 2">
             
             <h6>Você pode escolher até 5 estilos</h6>
-            
-            <ul class="list">
-
-                <li class="item item-toggle">Rock<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
-                <li class="item item-toggle">Samba<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
-                <li class="item item-toggle">Pop<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
-                <li class="item item-toggle">Metal<label class="toggle toggle-calm"><input type="checkbox"><div class="track"><div class="handle"></div></div></label></li>
-                                                                                
-                <li class="item">
-                    <button class="button button-clear button-calm">
-                        Ver mais...
+        
+            <div class="list">
+                
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Estilo
+                    </div>
+                    <select ng-model="cad.formData.estilo">
+                        <option ng-repeat="item in cad.formData.listEstilosDisponiveis | filter: cad.filterAlreadyAddedEstilos" ng-value="item.IdEstilo">
+                            {{item.NmEstilo}}
+                        </option>
+                    </select>
+                </label>
+                
+                <div class="item" style="text-align:center">
+                    <button class="button button-outline button-calm" ng-click="cad.addEstilo()">
+                        Incluir
                     </button>
-                </li>
-            </ul>
+                </div>
+            </div>
+                
+            <div class="list" >
+
+                <div class="item item-button-right" ng-repeat="item in cad.formData.listEstilos">
+                    {{item.NmEstilo}}
+                    <a class="button button-small button-icon icon-small ion-close" ng-click="cad.removeEstilo(item)"></a>
+                </div>
+                
+            </div>
             
-             <div class="bar bar-calm" ng-click="cad.concluir()">
+            <div class="bar bar-calm" ng-click="cad.concluir()">
                 <div class="title">Pronto!</div>
             </div>
+            
         </div>
+
     </ion-content>
 </ion-view>

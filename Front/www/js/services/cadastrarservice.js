@@ -17,4 +17,16 @@ angular.module('app').service('CadastrarService', ['$q', '$resource',
 
             });
         };
+
+        self.buscarEstilos = function(){
+            return $q(function(resolve, reject){
+                var resource = $resource(config.urls.buscarEstilo);
+
+                resource.query(function(response){
+                    resolve(response);
+                }, function(response){
+                    reject(response);
+                });
+            });
+        };
     }]);

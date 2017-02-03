@@ -29,6 +29,7 @@
         entrarFormData.Password = "";
         entrarFormData.Nome= "";
         entrarFormData.instrumento = "";
+        entrarFormData.estilo = "";
         entrarFormData.rating = 2; //nivel inicial
       }
     }

@@ -7,7 +7,8 @@
     gl.config = {
         urls:{
             loginAPI: baseURLApi + "/api/Usuario/:id",
-            buscarInstrumento: baseURLApi + '/api/Instrumento/:id'
+            buscarInstrumento: baseURLApi + '/api/Instrumento/:id',
+            buscarEstilo: baseURLApi + '/api/Estilo/:id'
         }
     };
 

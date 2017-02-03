@@ -1,4 +1,94 @@
-ExecutedCommands: CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+ExecutedCommands: CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
 
@@ -24,7 +114,7 @@ Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial 
 Parameters:
 
 ----
-CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
 
@@ -34,7 +124,7 @@ Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial 
 Parameters:
 
 ----
-CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
 
@@ -44,27 +134,7 @@ Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial 
 Parameters:
 
 ----
-CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
-Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
-Parameters:
-
-----
-CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
-Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
-Parameters:
-
-----
-CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
-Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
-Parameters:
-
-----
-CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
-Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
-Parameters:
-
-----
-CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
 --------------

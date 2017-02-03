@@ -1,25 +1,19 @@
 angular.module('app').controller('cadastrarCtrl', 
-    ['$scope','EntrarFactory','$ionicNavBarDelegate','$location','$ionicPopup','$ionicSlideBoxDelegate',
-    function ($scope, EntrarFactory, $ionicNavBarDelegate, $location,$ionicPopup,$ionicSlideBoxDelegate) {
+    ['$scope','EntrarFactory','$ionicNavBarDelegate','$location','$ionicPopup','$ionicSlideBoxDelegate', 'CadastrarService',
+    function ($scope, EntrarFactory, $ionicNavBarDelegate, $location,$ionicPopup,$ionicSlideBoxDelegate,CadastrarService) {
 
         var cadastrar = this;
         
-        debugger;
         cadastrar.step = 0;
         
         cadastrar.titulo = "Cadastrar";
+        cadastrar.promise = null;
         
         $ionicNavBarDelegate.showBackButton(false);
         cadastrar.formData = EntrarFactory.bindLoginFormData;
         
         cadastrar.formData.listInstrumentos = [];
         cadastrar.formData.listInstrumentosDisponiveis = [];
-        
-        cadastrar.formData.listInstrumentosDisponiveis.push(
-            {id: 0, nome: "GUITARRA"},
-            {id: 1, nome: "BATERIA"},
-            {id: 2, nome: "TECLADO"},
-            {id: 3, nome: "BAIXO"});
             
         $scope.ratingsObject = {
             iconOn: 'ion-ios-star',    //Optional
@@ -34,13 +28,34 @@ angular.module('app').controller('cadastrarCtrl',
             }
         };
 
+        cadastrar.pageLoad = function(){
+
+            cadastrar.carregarInstrumentos();
+
+        };
+
+        cadastrar.carregarInstrumentos = function(){
+
+            cadastrar.promise = CadastrarService.buscarInstrumentos();
+
+            cadastrar.promise.then(function(response){
+
+                cadastrar.formData.listInstrumentosDisponiveis = response;
+                
+            }, function(error){
+
+                debugger;
+
+            });
+
+        }
         
         $scope.ratingsCallback = function(rating, index) {
             cadastrar.formData.rating = rating;
         };
         
         cadastrar.addInstrumento = function(){
-            
+            debugger;
             if(cadastrar.formData.listInstrumentos.length >= 3)
             {
                 
@@ -58,11 +73,14 @@ angular.module('app').controller('cadastrarCtrl',
                 return false;
             }
             
-            cadastrar.formData.listInstrumentos.push({
-                id: cadastrar.formData.listInstrumentosDisponiveis[cadastrar.formData.instrumento].id,
-                nome: cadastrar.formData.listInstrumentosDisponiveis[cadastrar.formData.instrumento].nome,
-                rating: cadastrar.formData.rating
-            });
+            var obj = jslinq(cadastrar.formData.listInstrumentosDisponiveis)
+                            .where(function(value){ return value.IdInstrumento == cadastrar.formData.instrumento; })
+                            .singleOrDefault(function (el){ return el;});
+
+
+            obj.rating = cadastrar.formData.rating;
+
+            cadastrar.formData.listInstrumentos.push(obj);
 
             //cadastrar.zerarRatings();
         };
@@ -70,7 +88,7 @@ angular.module('app').controller('cadastrarCtrl',
         cadastrar.removeInstrumento = function(item){
            
             for(var i in cadastrar.formData.listInstrumentos){
-                if(cadastrar.formData.listInstrumentos[i].id === item.id)
+                if(cadastrar.formData.listInstrumentos[i].IdInstrumento === item.IdInstrumento)
                 {
                    cadastrar.formData.listInstrumentos.splice(i, 1); 
                    console.log(i);
@@ -81,7 +99,7 @@ angular.module('app').controller('cadastrarCtrl',
         cadastrar.filterAlreadyAdded = function(item){
             
             var retorno = jslinq(cadastrar.formData.listInstrumentos)
-                            .where(function(value){ return value.id == item.id; }).count();
+                            .where(function(value){ return value.IdInstrumento == item.IdInstrumento; }).count();
             
             return (retorno == 0);
             //return (cadastrar.formData.listInstrumentos.index(item) == -1);

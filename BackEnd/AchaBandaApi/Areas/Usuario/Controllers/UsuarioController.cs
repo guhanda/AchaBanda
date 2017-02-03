@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AchaBandaApi.Areas.Usuario.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UsuarioController : ApiController
     {
         // GET: api/Usuario
@@ -18,6 +20,7 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         }
 
         // GET: api/Usuario/5
+        [HttpGet]
         public UsuarioModel Get(int id)
         {
             UsuarioModel usuario;

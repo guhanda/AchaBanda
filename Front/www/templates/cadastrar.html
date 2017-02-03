@@ -1,5 +1,5 @@
 
-<ion-view title="{{cad.titulo}}" id="cadastrar" ng-controller="cadastrarCtrl as cad">
+<ion-view title="{{cad.titulo}}" id="cadastrar" ng-controller="cadastrarCtrl as cad" ng-init="cad.pageLoad()">
     
     <ion-content padding="true" class="has-header">
 
@@ -37,8 +37,8 @@
                         Instrumento
                     </div>
                     <select ng-model="cad.formData.instrumento">
-                        <option ng-repeat="item in cad.formData.listInstrumentosDisponiveis | filter: cad.filterAlreadyAdded" ng-value="item.id">
-                            {{item.nome}}
+                        <option ng-repeat="item in cad.formData.listInstrumentosDisponiveis | filter: cad.filterAlreadyAdded" ng-value="item.IdInstrumento">
+                            {{item.NmInstrumento}}
                         </option>
                     </select>
                 </label>
@@ -56,7 +56,7 @@
             <div class="list" >
 
                 <div class="item item-button-right" ng-repeat="item in cad.formData.listInstrumentos">
-                    {{item.nome}}
+                    {{item.NmInstrumento}}
                     <a class="button button-small button-icon icon-small ion-close" ng-click="cad.removeInstrumento(item)"></a>
                 </div>
                 

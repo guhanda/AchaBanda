@@ -40,7 +40,7 @@ namespace AchaBandaApi.Core.Infraestrutura
         {
             var aa = CustomDbProfiler.Current.ProfilerContext.GetCommands();
 
-            var path = @"D:\GitPessoal\achaBanda\AchaBanda\BackEnd";
+            var path = @"E:\Proj\achaBanda\AchaBanda\BackEnd";
 
             File.WriteAllText(path+"\\Log.txt", aa);
 

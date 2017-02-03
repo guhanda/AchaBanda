@@ -12,7 +12,9 @@ angular.module('app', [
     'app.directives',
     'app.services',
     'facebook',
-    'ionic-ratings'])
+    'ionic-ratings',
+    'ngResource',
+    'LocalStorageModule'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   
@@ -25,6 +27,12 @@ angular.module('app', [
     var myAppId = '251942018560038';
     FacebookProvider.init(myAppId);
 }])
+
+.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider.setPrefix('app');
+  localStorageServiceProvider.setStorageType('sessionStorage');
+  localStorageServiceProvider.setNotify(true, true);
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

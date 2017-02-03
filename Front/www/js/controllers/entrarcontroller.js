@@ -1,5 +1,5 @@
-angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebook','EntrarFactory','$location','$ionicNavBarDelegate',
-    function ($scope, $stateParams,Facebook,EntrarFactory, $location, $ionicNavBarDelegate) {
+angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebook','EntrarFactory','$location','$ionicNavBarDelegate', 'AutenticacaoService','localStorageService',
+    function ($scope, $stateParams,Facebook,EntrarFactory, $location, $ionicNavBarDelegate, AutenticacaoService, localStorageService) {
 
         $ionicNavBarDelegate.showBackButton(false);
         
@@ -31,6 +31,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
             }, { scope: 'public_profile,email' }).then(function (response) {
                 console.log(response);
                 debugger;
+
                 if (response.status == 'connected') {
 
                     entrar.formData.Token = response.authResponse.accessToken;
@@ -63,10 +64,23 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
         };
         
         function submitLogin(){
-          
-            $location.path("/cadastrar");
-            //$scope.state.go('cadastrar');
-            
+            debugger;
+            //buscar o usuário
+            var promise = AutenticacaoService.autenticar();
+
+            promise.then(function(response){
+                
+                console.log(response);
+                debugger;
+                localStorageService.set('user',response)
+
+                $location.path("/cadastrar");
+                
+            }, function(error){
+                debugger;
+                console.log(error);
+            });
+
         };
 
     }

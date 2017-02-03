@@ -263,6 +263,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\Instrumento\Controllers\InstrumentoController.cs" />
     <Compile Include="Areas\Instrumento\InstrumentoAreaRegistration.cs" />
+    <Compile Include="Areas\UsuarioInstrumento\Controllers\UsuarioInstrumentoController.cs" />
+    <Compile Include="Areas\UsuarioInstrumento\UsuarioInstrumentoAreaRegistration.cs" />
     <Compile Include="Areas\UsuarioLocalizacao\Controllers\UsuarioLocalizacaoController.cs" />
     <Compile Include="Areas\UsuarioLocalizacao\UsuarioLocalizacaoAreaRegistration.cs" />
     <Compile Include="Areas\Usuario\Controllers\UsuarioController.cs" />
@@ -273,10 +275,12 @@
     <Compile Include="Core\Aplicacao\EstiloFacade.cs" />
     <Compile Include="Core\Aplicacao\InstrumentoFacade.cs" />
     <Compile Include="Core\Aplicacao\Interface\IFacade.cs" />
+    <Compile Include="Core\Aplicacao\UsuarioInstrumentoFacade.cs" />
     <Compile Include="Core\Aplicacao\UsuarioLocalizacaoFacade.cs" />
     <Compile Include="Core\Aplicacao\UsuarioFacade.cs" />
     <Compile Include="Core\Dominio\EstiloModel.cs" />
     <Compile Include="Core\Dominio\InstrumentoModel.cs" />
+    <Compile Include="Core\Dominio\UsuarioInstrumentoModel.cs" />
     <Compile Include="Core\Dominio\UsuarioLocalizacaoModel.cs" />
     <Compile Include="Core\Dominio\UsuarioModel.cs" />
     <Compile Include="Core\Infraestrutura\Database.cs" />
@@ -329,6 +333,7 @@
     <Content Include="Areas\Instrumento\Views\web.config" />
     <Content Include="Areas\Estilo\Views\web.config" />
     <Content Include="Areas\UsuarioLocalizacao\Views\web.config" />
+    <Content Include="Areas\UsuarioInstrumento\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -362,6 +367,8 @@
     <Folder Include="Areas\Estilo\Views\Shared\" />
     <Folder Include="Areas\Instrumento\Models\" />
     <Folder Include="Areas\Instrumento\Views\Shared\" />
+    <Folder Include="Areas\UsuarioInstrumento\Models\" />
+    <Folder Include="Areas\UsuarioInstrumento\Views\Shared\" />
     <Folder Include="Areas\UsuarioLocalizacao\Models\" />
     <Folder Include="Areas\UsuarioLocalizacao\Views\Shared\" />
     <Folder Include="Areas\Usuario\Models\" />

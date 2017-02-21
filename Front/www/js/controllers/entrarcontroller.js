@@ -66,7 +66,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
         function submitLogin(){
             debugger;
             //buscar o usuário
-            var promise = AutenticacaoService.autenticar(2);
+            var promise = AutenticacaoService.autenticar(entrar.formData.Email);
 
             promise.then(function(response){
                 
@@ -75,7 +75,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
 
                 if(response.idUsuario)
                 {
-                    localStorageService.set('user',response.id)
+                    localStorageService.set('user',response.idUsuario)
 
                     $location.path('/side-menu21/menu.home');
                 }
@@ -112,6 +112,16 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
                 debugger;
                 console.log(error);
             });
+
+        };
+
+        entrar.pageLoad = function(){
+
+            if(localStorageService.get('user')){
+
+                $location.path('/side-menu21/menu.home');
+                
+            }
 
         };
 

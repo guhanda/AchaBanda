@@ -8,10 +8,10 @@ angular.module('app').service('AutenticacaoService', ['$q', '$resource',
 
             return $q(function (resolve, reject) {
                    
-                   var resource = $resource(config.urls.loginAPI);
+                   var resource = $resource(config.urls.loginAPI + "?email=" + obj);
 
                     debugger;
-                    resource.get({id: obj}, function(response){
+                    resource.get(null, function(response){
                         resolve(response);
                     }, function(error){
                         reject(error);

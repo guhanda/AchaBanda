@@ -50,12 +50,12 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
 
             Facebook.api('/me', function () {
                 // não faz nada, deixa a resposta a cargo da promise
-            }, { "fields": "email,first_name" }).then(function (response) {
+            }, { "fields": "email,first_name,last_name" }).then(function (response) {
                 debugger;
             
                 entrar.formData.Token = response.id;
                 entrar.formData.Email = response.email;
-                entrar.formData.Nome = response.first_name;
+                entrar.formData.Nome = response.first_name + ' ' + response.last_name;
                 entrar.formData.Password = "";
                 
                 submitLogin();
@@ -66,15 +66,47 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
         function submitLogin(){
             debugger;
             //buscar o usuário
-            var promise = AutenticacaoService.autenticar();
+            var promise = AutenticacaoService.autenticar(2);
 
             promise.then(function(response){
                 
                 console.log(response);
                 debugger;
-                localStorageService.set('user',response)
 
-                $location.path("/cadastrar");
+                if(response.idUsuario)
+                {
+                    localStorageService.set('user',response.id)
+
+                    $location.path('/side-menu21/menu.home');
+                }
+                else{
+
+                    //cadastra o usuário
+                    var model = {
+                        Nome: entrar.formData.Nome,
+                        Email: entrar.formData.Email,
+                        Senha: entrar.formData.Token,
+                        DataCadastro: new Date(),
+                        Token: entrar.formData.Token
+                    };
+
+                    var promiseCadastro = AutenticacaoService.cadastrar(model);
+
+                    promiseCadastro.then(function(response){
+
+                        debugger;
+                        console.log(response);
+
+                        localStorageService.set('user',response.id);
+
+                        $location.path("/cadastrar");
+
+                    }, function(error){
+                        debugger;
+                        console.log(error);
+                    });
+
+                }
                 
             }, function(error){
                 debugger;

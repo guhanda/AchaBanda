@@ -33,13 +33,29 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
             return usuario;
         }
 
+        // GET: api/Usuario/5
+        [HttpGet]
+        [Route("~/api/Usuario/getPorEmail", Name = "getPorEmail")]
+        public UsuarioModel GetPorEmail(string email)
+        {
+            UsuarioModel usuario;
+
+            using (var facade = new UsuarioFacade())
+            {
+                usuario = facade.SelecionarComFiltro(new UsuarioModel { Email = email });
+            }
+
+            return usuario;
+        }
+
         // POST: api/Usuario
         public void Post([FromBody]string value)
         {
         }
 
         // PUT: api/Usuario/5
-        public long Put([FromBody]UsuarioModel usuario)
+        [HttpPut]
+        public HttpResponseMessage Put([FromBody]UsuarioModel usuario)
         {
             long retorno = 0;
 
@@ -50,7 +66,8 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
                 retorno = inserir.idUsuario;
             }
 
-            return retorno;
+            return Request.CreateResponse(HttpStatusCode.OK, retorno);
+            
         }
 
         // DELETE: api/Usuario/5

@@ -44,5 +44,17 @@ namespace AchaBandaApi.Core.Aplicacao
 
             return retorno;
         }
+
+        public UsuarioModel SelecionarComFiltro(UsuarioModel model) {
+
+            var selectSql = @"SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)";
+
+            return connection.Query<UsuarioModel>(selectSql, new
+            {
+                model.Email
+            }).FirstOrDefault();
+            
+
+        }
     }
 }

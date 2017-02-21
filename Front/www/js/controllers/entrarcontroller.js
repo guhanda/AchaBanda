@@ -1,5 +1,5 @@
-angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebook','EntrarFactory','$location','$ionicNavBarDelegate', 'AutenticacaoService','localStorageService',
-    function ($scope, $stateParams,Facebook,EntrarFactory, $location, $ionicNavBarDelegate, AutenticacaoService, localStorageService) {
+angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebook','EntrarFactory','$location','$ionicNavBarDelegate', 'AutenticacaoService','CookieService',
+    function ($scope, $stateParams,Facebook,EntrarFactory, $location, $ionicNavBarDelegate, AutenticacaoService, CookieService) {
 
         $ionicNavBarDelegate.showBackButton(false);
         
@@ -75,7 +75,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
 
                 if(response.idUsuario)
                 {
-                    localStorageService.set('user',response.idUsuario)
+                    CookieService.gravarCookieUsuario(response);
 
                     $location.path('/side-menu21/menu.home');
                 }
@@ -97,7 +97,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
                         debugger;
                         console.log(response);
 
-                        localStorageService.set('user',response.id);
+                        CookieService.gravarCookieUsuario(response);
 
                         $location.path("/cadastrar");
 
@@ -116,8 +116,10 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
         };
 
         entrar.pageLoad = function(){
+            debugger;
+            var usuario = CookieService.retornarCookieUsuario();
 
-            if(localStorageService.get('user')){
+            if(usuario){
 
                 $location.path('/side-menu21/menu.home');
                 

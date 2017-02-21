@@ -14,7 +14,8 @@ angular.module('app', [
     'facebook',
     'ionic-ratings',
     'ngResource',
-    'LocalStorageModule'])
+    'LocalStorageModule',
+    'base64'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   

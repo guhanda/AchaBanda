@@ -26,5 +26,17 @@ CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR e
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
 Name: Email, Value: ferla.bruno@gmail.com
+
+----
+CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Email, Value: ferla.bruno@gmail.com
+
+----
+CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Email, Value: ferla.bruno@gmail.com
 --------------
 FailedCommands: 

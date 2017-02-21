@@ -6,7 +6,8 @@
 
     gl.config = {
         urls:{
-            loginAPI: baseURLApi + "/api/Usuario/getPorEmail/:email",
+            loginAPI: baseURLApi + "/api/Usuario/:id",
+            getPorEmail: baseURLApi + "/api/Usuario/getPorEmail",
             buscarInstrumento: baseURLApi + '/api/Instrumento/:id',
             buscarEstilo: baseURLApi + '/api/Estilo/:id',
             cadastrarUsuarioInstrumento : baseURLApi + '/api/UsuarioInstrumento',

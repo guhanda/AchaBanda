@@ -8,7 +8,7 @@ angular.module('app').service('AutenticacaoService', ['$q', '$resource',
 
             return $q(function (resolve, reject) {
                    
-                   var resource = $resource(config.urls.loginAPI + "?email=" + obj);
+                   var resource = $resource(config.urls.getPorEmail + "?email=" + obj);
 
                     debugger;
                     resource.get(null, function(response){

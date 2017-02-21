@@ -38,5 +38,57 @@ CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR e
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
 Name: Email, Value: ferla.bruno@gmail.com
+
+----
+CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Email, Value: ferla.bruno@gmail.com
+
+----
+CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Email, Value: ferla.bruno@gmail.com
+
+----
+CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Email, Value: ferla.bruno@gmail.com
+
+----
+CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Email, Value: ferla.bruno@gmail.com
+
+----
+CommandType: Text, CommandText: Select [idUsuario],[Nome],[Email],[Senha],[Celular],[DataCadastro],[Token] from [usuario] Where email = 'ferla.bruno@gmail.com'
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: insert into [usuario] ([Nome], [Email], [Senha], [Celular], [DataCadastro], [Token]) values (@Nome, @Email, @Senha, @Celular, @DataCadastro, @Token);SELECT CAST(SCOPE_IDENTITY()  AS BIGINT) AS [id]
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Celular, Value: 
+Name: DataCadastro, Value: 21/02/2017 20:52:40
+Name: Email, Value: ferla.bruno@gmail.com
+Name: Nome, Value: Bruno Ferla
+Name: Senha, Value: 1183640955054169
+Name: Token, Value: 1183640955054169
+
+----
+CommandType: Text, CommandText: Select [idUsuario],[Nome],[Email],[Senha],[Celular],[DataCadastro],[Token] from [usuario] where [idUsuario] = @Id
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 8
+
+----
+CommandType: Text, CommandText: SELECT * FROM Usuario WHERE (@email IS NULL OR email = @email)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: Email, Value: ferla.bruno@gmail.com
 --------------
 FailedCommands: 

@@ -71,7 +71,7 @@ angular.module('app').controller('cadastrarCtrl',
                 
             }, function(error){
 
-                debugger;
+                
 
             });
 
@@ -158,7 +158,7 @@ angular.module('app').controller('cadastrarCtrl',
                 
             }, function(error){
 
-                debugger;
+                
 
             });
 
@@ -212,7 +212,7 @@ angular.module('app').controller('cadastrarCtrl',
         };
         
         cadastrar.concluir = function(){
-            debugger;
+            
 
             angular.forEach(cadastrar.formData.listInstrumentos, function(value, key){
 

@@ -49,13 +49,8 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         }
 
         // POST: api/Usuario
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Usuario/5
-        [HttpPut]
-        public HttpResponseMessage Put([FromBody]UsuarioModel usuario)
+        [HttpPost]
+        public HttpResponseMessage Post([FromBody]UsuarioModel usuario)
         {
             long retorno = 0;
 
@@ -66,7 +61,24 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
                 retorno = inserir.idUsuario;
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, retorno);
+            return Request.CreateResponse(HttpStatusCode.OK, new RetornoBase<UsuarioModel> { Success = true, Value = inserir });
+           
+        }
+
+        // PUT: api/Usuario/5
+        [HttpPut]
+        public IHttpActionResult Put([FromBody]UsuarioModel usuario)
+        {
+            long retorno = 0;
+
+            var facade = new UsuarioFacade();
+            var inserir = facade.Inserir(usuario);
+            if (inserir != null)
+            {
+                retorno = inserir.idUsuario;
+            }
+
+            return Ok(retorno);
             
         }
 
@@ -74,5 +86,17 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class RetornoBase
+    {
+        public bool Success { get; set; }
+
+        public string Message { get; set; }
+    }
+
+    public class RetornoBase<T> : RetornoBase
+    {
+        public T Value { get; set; }
     }
 }

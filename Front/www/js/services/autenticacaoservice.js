@@ -10,7 +10,7 @@ angular.module('app').service('AutenticacaoService', ['$q', '$resource',
                    
                    var resource = $resource(config.urls.getPorEmail + "?email=" + obj);
 
-                    debugger;
+                    
                     resource.get(null, function(response){
                         resolve(response);
                     }, function(error){
@@ -24,13 +24,14 @@ angular.module('app').service('AutenticacaoService', ['$q', '$resource',
         self.cadastrar = function(obj){
 
             return $q(function(resolve, reject){
-                debugger;
+                
                
                 var resource = $resource(config.urls.loginAPI, null, {
-                    save: { method: 'PUT' }
+                    save: { method: 'POST' }
                 });
 
                 resource.save(obj, function(response){
+                    
                     resolve(response);
                 }, function(error){
                     reject(error);

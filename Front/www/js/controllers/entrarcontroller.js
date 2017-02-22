@@ -30,7 +30,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
                 // não faz nada, deixa a resposta a cargo da promise
             }, { scope: 'public_profile,email' }).then(function (response) {
                 console.log(response);
-                debugger;
+                
 
                 if (response.status == 'connected') {
 
@@ -40,7 +40,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
                 }
 
             }, function (response) {
-                debugger;
+                
                 login.msgRetorno = error;
             });
             
@@ -51,7 +51,7 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
             Facebook.api('/me', function () {
                 // não faz nada, deixa a resposta a cargo da promise
             }, { "fields": "email,first_name,last_name" }).then(function (response) {
-                debugger;
+                
             
                 entrar.formData.Token = response.id;
                 entrar.formData.Email = response.email;
@@ -64,14 +64,14 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
         };
         
         function submitLogin(){
-            debugger;
+            
             //buscar o usuário
             var promise = AutenticacaoService.autenticar(entrar.formData.Email);
 
             promise.then(function(response){
                 
                 console.log(response);
-                debugger;
+                
 
                 if(response.idUsuario)
                 {
@@ -94,29 +94,30 @@ angular.module('app').controller('entrarCtrl', ['$scope', '$stateParams','Facebo
 
                     promiseCadastro.then(function(response){
 
-                        debugger;
-                        console.log(response);
+                        
+                        if(response.Success){
 
-                        CookieService.gravarCookieUsuario(response);
+                            CookieService.gravarCookieUsuario(response.Value);
 
-                        $location.path("/cadastrar");
+                            $location.path("/cadastrar");
+                        }
 
                     }, function(error){
-                        debugger;
+                        
                         console.log(error);
                     });
 
                 }
                 
             }, function(error){
-                debugger;
+                
                 console.log(error);
             });
 
         };
 
         entrar.pageLoad = function(){
-            debugger;
+            
             var usuario = CookieService.retornarCookieUsuario();
 
             if(usuario){

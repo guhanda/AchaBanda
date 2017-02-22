@@ -63,4 +63,5 @@ angular.module('app').service('CadastrarService', ['$q', '$resource',
             });
 
         };
+
     }]);

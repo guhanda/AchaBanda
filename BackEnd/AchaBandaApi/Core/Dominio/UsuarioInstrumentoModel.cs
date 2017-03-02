@@ -13,5 +13,6 @@ namespace AchaBandaApi.Core.Dominio
         public long idUsuarioInstrumento { get; set; }
         public long idUsuario { get; set; }
         public long idInstrumento { get; set; }
+        public long IndAvaliacao { get; set; }
     }
 }

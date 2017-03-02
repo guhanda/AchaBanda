@@ -16,6 +16,8 @@ namespace AchaBandaApi.Core.Dominio
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Celular { get; set; }
+        public string Descricao { get; set; }
+        public int StatusCadastro { get; set; }
         public DateTime DataCadastro { get; set; }
         public string Token { get; set; }
 

@@ -6,7 +6,6 @@ use achaBanda;
 
 --Tabela de Usuario
 
-
 --Tabela de Usuario
 CREATE TABLE usuario (
 idusuario bigint NOT NULL identity(1,1),
@@ -14,8 +13,10 @@ nome varchar(255)  NOT NULL,
 email varchar(255) NOT NULL,
 senha varchar(30)  NOT NULL,
 celular varchar(20),	
+descricao varchar(255),
 datacadastro datetime,
 token varchar(255),
+statusCadastro int not null default 0,
 PRIMARY KEY (idusuario)
 );
 
@@ -28,14 +29,6 @@ PRIMARY KEY (idUsuarioSessao),
 constraint FKusuarioSessaoUsuario foreign key (idUsuario) references usuario(idUsuario)
 );
 
-CREATE TABLE historicoBusca(
-idHistoricoBusca bigint NOT NULL identity(1,1),
-idUsuario bigint NOT NULL,
-idInstrumento bigint NOT NULL,
-PRIMARY KEY (idHistoricoBusca),
-constraint FKhistoricoBuscaUsuario foreign key (idUsuario) references usuario(idUsuario),
-constraint FKhistoricoBuscaIntrumento foreign key (idIntrumento) references instrumento(idIntrumento)
-);
 
 CREATE TABLE usuarioLocalizacao (
 idUsuarioLocalizacao bigint NOT NULL identity(1,1),
@@ -82,10 +75,20 @@ flAtivo bit default 1,
 PRIMARY KEY (idInstrumento)
 );
 
+CREATE TABLE historicoBusca(
+idHistoricoBusca bigint NOT NULL identity(1,1),
+idUsuario bigint NOT NULL,
+idInstrumento bigint NOT NULL,
+PRIMARY KEY (idHistoricoBusca),
+constraint FKhistoricoBuscaUsuario foreign key (idUsuario) references usuario(idUsuario),
+constraint FKhistoricoBuscaIntrumento foreign key (idInstrumento) references instrumento(idInstrumento)
+);
+
 CREATE TABLE usuarioInstrumento (
 idUsuarioInstrumento bigint NOT NULL identity(1,1),
 idUsuario bigint NOT NULL,
 idInstrumento bigint NOT NULL,
+indAvaliacao int not null default 0,
 PRIMARY KEY (idUsuarioInstrumento),
 constraint FKusuarioInstrumento_usuario foreign key (idUsuario) references usuario(idUsuario),
 constraint FKusuarioInstrumento_instrumento foreign key (idInstrumento) references instrumento(idInstrumento)

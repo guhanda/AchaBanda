@@ -13,7 +13,6 @@ namespace AchaBandaApi.Core.Dominio
         public long IdInstrumento { get; set; }
         public string NmInstrumento { get; set; }
         public int IdTipoInstrumento { get; set; }
-        public int IndAvaliacao { get; set; }
         public bool FlAtivo { get; set; }
     }
 }

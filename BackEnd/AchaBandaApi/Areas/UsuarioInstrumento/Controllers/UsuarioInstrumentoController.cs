@@ -1,8 +1,12 @@
-﻿using AchaBandaApi.Core.Aplicacao;
+﻿using AchaBandaApi.Areas.Usuario.Controllers;
+using AchaBandaApi.Core.Aplicacao;
 using AchaBandaApi.Core.Dominio;
+using AchaBandaApi.Core.Infraestrutura;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -32,22 +36,34 @@ namespace AchaBandaApi.Areas.UsuarioInstrumento.Controllers
         }
 
         // POST: api/Usuario
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]UsuarioInstrumentoModel usuarioInstrumento)
         {
+            long retorno = 0;
+            UsuarioInstrumentoModel inserir;
+
+            using (var facade = new UsuarioInstrumentoFacade())
+            {
+                inserir = facade.Inserir(usuarioInstrumento);
+
+                if (inserir != null)
+                {
+                    retorno = inserir.idUsuario;
+                }
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, new RetornoBase<UsuarioInstrumentoModel> { Success = true, Value = inserir });
         }
 
         // PUT: api/Usuario/5
-        public long Put([FromBody]UsuarioInstrumentoModel usuarioInstrumento)
+        public UsuarioInstrumentoModel Put([FromBody]UsuarioInstrumentoModel usuarioInstrumento)
         {
-            long retorno = 0;
+            UsuarioInstrumentoModel retorno;
 
-            var facade = new UsuarioInstrumentoFacade();
-            var inserir = facade.Inserir(usuarioInstrumento);
-            if (inserir != null)
+            using (var facade = new UsuarioInstrumentoFacade())
             {
-                retorno = inserir.idUsuario;
+                retorno = facade.Atualizar(usuarioInstrumento);
             }
-
+                
             return retorno;
         }
 

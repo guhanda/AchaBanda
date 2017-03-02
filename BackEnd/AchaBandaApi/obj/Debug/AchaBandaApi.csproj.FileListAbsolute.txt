@@ -296,3 +296,6 @@ E:\Proj\AchaBanda\AchaBanda\BackEnd\AchaBandaApi\obj\Debug\AchaBandaApi.pdb
 E:\Proj\AchaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\System.Web.Cors.dll
 E:\Proj\AchaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\System.Web.Http.Cors.dll
 E:\Proj\AchaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\System.Web.Http.Cors.xml
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\System.Web.Cors.dll
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\System.Web.Http.Cors.dll
+D:\GitPessoal\achaBanda\AchaBanda\BackEnd\AchaBandaApi\bin\System.Web.Http.Cors.xml

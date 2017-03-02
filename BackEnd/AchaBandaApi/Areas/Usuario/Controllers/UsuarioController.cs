@@ -1,5 +1,6 @@
 ﻿using AchaBandaApi.Core.Aplicacao;
 using AchaBandaApi.Core.Dominio;
+using AchaBandaApi.Core.Infraestrutura;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,17 +70,14 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         [HttpPut]
         public IHttpActionResult Put([FromBody]UsuarioModel usuario)
         {
-            long retorno = 0;
+            UsuarioModel usuarioModel;
 
-            var facade = new UsuarioFacade();
-            var inserir = facade.Inserir(usuario);
-            if (inserir != null)
+            using (var facade = new UsuarioFacade())
             {
-                retorno = inserir.idUsuario;
+                usuarioModel = facade.Atualizar(usuario);
             }
 
-            return Ok(retorno);
-            
+            return Ok(1);
         }
 
         // DELETE: api/Usuario/5
@@ -87,16 +85,5 @@ namespace AchaBandaApi.Areas.Usuario.Controllers
         {
         }
     }
-
-    public class RetornoBase
-    {
-        public bool Success { get; set; }
-
-        public string Message { get; set; }
-    }
-
-    public class RetornoBase<T> : RetornoBase
-    {
-        public T Value { get; set; }
-    }
+    
 }

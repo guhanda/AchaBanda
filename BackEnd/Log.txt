@@ -1,10 +1,37 @@
-ExecutedCommands: CommandType: Text, CommandText: Select [IdInstrumento],[NmInstrumento],[IdTipoInstrumento],[IndAvaliacao],[FlAtivo] from [instrumento] where flativo = 1 order by indavaliacao desc, nminstrumento asc
+ExecutedCommands: CommandType: Text, CommandText: Select [idUsuarioInstrumento],[idUsuario],[idInstrumento],[IndAvaliacao] from [usuarioInstrumento] Where idUsuario = 1 and idInstrumento = 2
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
 
 ----
-CommandType: Text, CommandText: Select [IdEstilo],[NmEstilo],[IndAvaliacao],[FlAtivo] from [estilo] where flativo = 1 order by indavaliacao desc, nmestilo asc
+CommandType: Text, CommandText: Select [idUsuarioInstrumento],[idUsuario],[idInstrumento],[IndAvaliacao] from [usuarioInstrumento] Where idUsuario = 1 and idInstrumento = 4
 Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
 Parameters:
+
+----
+CommandType: Text, CommandText: insert into [usuarioInstrumento] ([idUsuario], [idInstrumento], [IndAvaliacao]) values (@idUsuario, @idInstrumento, @IndAvaliacao)
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idInstrumento, Value: 4
+Name: idUsuario, Value: 1
+Name: IndAvaliacao, Value: 4
+
+----
+CommandType: Text, CommandText: Select [idUsuarioInstrumento],[idUsuario],[idInstrumento],[IndAvaliacao] from [usuarioInstrumento] Where idUsuario = 1 and idInstrumento = 5
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+
+----
+CommandType: Text, CommandText: insert into [usuarioInstrumento] ([idUsuario], [idInstrumento], [IndAvaliacao]) values (@idUsuario, @idInstrumento, @IndAvaliacao);SELECT CAST(SCOPE_IDENTITY()  AS BIGINT) AS [id]
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: idInstrumento, Value: 5
+Name: idUsuario, Value: 1
+Name: IndAvaliacao, Value: 4
+
+----
+CommandType: Text, CommandText: Select [idUsuarioInstrumento],[idUsuario],[idInstrumento],[IndAvaliacao] from [usuarioInstrumento] where [idUsuarioInstrumento] = @Id
+Database: achabanda, ConnectionString: Data Source=localhost\SQLEXPRESS;Initial Catalog=achabanda;Integrated Security=True
+Parameters:
+Name: id, Value: 5
 --------------
 FailedCommands: 

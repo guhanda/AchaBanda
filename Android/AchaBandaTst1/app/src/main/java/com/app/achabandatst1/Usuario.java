@@ -1,7 +1,10 @@
 package com.app.achabandatst1;
+import android.graphics.Bitmap;
 import android.media.Image;
 import android.widget.ImageView;
 
+import java.net.URL;
+import java.util.BitSet;
 import java.util.List;
 
 /**
@@ -11,9 +14,22 @@ import java.util.List;
 public class Usuario {
     private int IdUsuario;
     private String NomeUsuario;
-    private ImageView ImagemUsuario;
     private List<String> Estilos;
     private Instrumento Instrumento;
+    private String UrlImage;
+
+    public String getUrlImage() {
+        return UrlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        UrlImage = urlImage;
+    }
+
+    public Usuario()
+    {
+
+    }
 
     public int getIdUsuario() {
         return IdUsuario;
@@ -31,13 +47,6 @@ public class Usuario {
         NomeUsuario = nomeUsuario;
     }
 
-    public ImageView getImagemUsuario() {
-        return ImagemUsuario;
-    }
-
-    public void setImagemUsuario(ImageView imagemUsuario) {
-        ImagemUsuario = imagemUsuario;
-    }
 
     public List<String> getEstilos() {
         return Estilos;

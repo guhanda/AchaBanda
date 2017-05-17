@@ -1,11 +1,15 @@
 package com.app.achabandatst1;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,15 +19,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.Toast;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.app.achabandatst1.R.id.imageView;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    // Keep all Images in array
+    public Integer[] mThumbIds = {
+            R.drawable.ic_menu_camera,R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,R.drawable.ic_menu_camera
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +61,10 @@ public class MainActivity extends AppCompatActivity
         String[] inst = getResources().getStringArray(R.array.Instrumentos);
         String[] est = getResources().getStringArray(R.array.Estilos);
         String[] usu = getResources().getStringArray(R.array.Usuarios);
+        List<String> list = new ArrayList<>();
 
-        List<Usuario> listaUsuario = new ArrayList<Usuario>();
+        ArrayList<Usuario> listaUsuario = new ArrayList<Usuario>();
+
         for (int i=0;i<=20;i++)
         {
             Random r = new Random();
@@ -58,19 +85,23 @@ public class MainActivity extends AppCompatActivity
             usuario.setInstrumento(instrumento);
 
             usuario.setNomeUsuario(usu[r.nextInt(usu.length)]);
+            //
+            list.add(usu[r.nextInt(usu.length)]);
+
+            //String imageURL = "https://pbs.twimg.com/profile_images/630285593268752384/iD1MkFQ0.png";
+
+            String imageURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwuD2r6tP3EeFjKXxB9vsHhOmCCDsOBCC85iACXbxBS6nI-SNh";
+            usuario.setUrlImage(imageURL);
+            /////
 
             listaUsuario.add(usuario);
 
-            ImageView img = new ImageView(getApplicationContext());
-
-
-            //Uri uri = Uri.fromFile();
-            //img.setImageURI(uri);
-            //usuario.setImagemUsuario(img);
         }
         //
+        GridView gridview = (GridView) findViewById(R.id.gridView);
+        gridview.setAdapter(new ImageAdapter(this,mThumbIds,listaUsuario));
 
-
+        /////
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,4 +177,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
+
